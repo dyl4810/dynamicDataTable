@@ -1,0 +1,59 @@
+.App{
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.sidebar{
+  max-width: 200px;
+  background-color: hsl(0, 0%, 95%);
+  padding: 10px 0px 0px 10px;
+  flex-grow: 1;
+}
+
+.contacts{
+  flex-grow: 1;
+  margin: 10px 10px 10px 10px;
+}
+
+.tableCell{
+  padding: 0px 20px 0px 0px;
+}
+
+.search{
+  height: 50px;
+  padding: 10px 10px 10px 10px;
+}
+
+.filter{
+  background-color:  hsl(0, 0%, 90%);
+  border-radius: 5px;
+  padding: 0px 5px 0px 5px;
+  display: inline-block;
+  font-size: 12px;
+}
+
+.filterClose{
+  text-align: right;
+  cursor: pointer;
+}
+
+.upDownArrow{
+  cursor: pointer;
+  color: rgb(207, 207, 207);
+  text-align: right;
+}
+
+.upDownArrowActive{
+  cursor: pointer;
+  color: black;
+  text-align: right;
+}
+
+.linkStyle{
+  text-decoration: none;
+}
+.linkStyleActive{
+  text-decoration: none;
+  font-weight: bold;
+}

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Tree from './Tree'
-import '../styles/Sidebar.css'
+import '../styles/App.css'
 
 class Sidebar extends Component{
 

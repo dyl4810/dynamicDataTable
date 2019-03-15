@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import {Link} from 'react-router-dom';
+import '../styles/App.css'
 
 class Tree extends Component {
   constructor(props) {
-    super(props); //not sure what this line does
+    super(props); //  not sure what this line does
     this.state = {
       expanded: true
     };
@@ -18,17 +20,18 @@ class Tree extends Component {
     let treeDepth = this.props.treeDepth;
     let subtree;
     let divstyle = {
-      marginLeft: (treeDepth * 5) +'px'
+      marginLeft: (treeDepth * 5) +'px',
+      color: 'black'
     }
     let arrowStyle= {
       cursor: 'pointer'
     }
     let arrow = () =>{
       if(this.state.expanded){
-        return(<b style = {arrowStyle} onClick ={this.onClick.bind(this)}>&#9662;</b>)        
+        return(<span style = {arrowStyle} onClick ={this.onClick.bind(this)}>&#9662;</span>)        
       }
       else{
-        return(<b style = {arrowStyle} onClick ={this.onClick.bind(this)}>&#9656;</b>)   
+        return(<span style = {arrowStyle} onClick ={this.onClick.bind(this)}>&#9656;</span>)   
       }  
     }
 
@@ -45,14 +48,14 @@ class Tree extends Component {
         return(
           <div style ={divstyle}>
             {arrow()}            
-            {treeData.name}          
+            <Link to= {"/"+treeData.name} className = 'linkStyle'>{treeData.name} </Link>          
             {subtree}
           </div>
         )
       }    
 
       else if(treeData.children.length === 0  && this.props.parentExpanded) {
-        return <div style ={divstyle} onClick ={this.onClick.bind(this)}>{treeData.name}</div>;
+        return <Link to= {"/"+treeData.name} className = 'linkStyle'><div style ={divstyle} onClick ={this.onClick.bind(this)}>{treeData.name}</div></Link>  ;
       }
 
       else{
