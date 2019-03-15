@@ -15,13 +15,13 @@ class Table extends React.Component {
   componentWillMount(){
     this.props.duplicateData(this.props.dataName)
     console.log('Redux state passed onto Table component after completion of duplicateData action:')
-    console.log(this.props.duplicatedData)
+    console.log(this.props.modifiedState.newcontacts)
   }
 
   createDataRows(){
     console.log('creating data rows')
     let renderedRows = [];
-    let data = this.props.data;
+    let data = this.props.modifiedState.newcontacts;
     let fieldKeys = Object.keys(data[0]);
  
     for(let i=0; i <= data.length -1; i++){
@@ -61,6 +61,7 @@ class Table extends React.Component {
       }
     })
     this.props.sortByField(headerKeyActive, this.props.dataName)
+    console.log(this.props.modifiedState.newcontacts)
   }  
 
   render() {
@@ -85,8 +86,9 @@ class Table extends React.Component {
 const mapStateToProps = (state, props) => {
   return {
     headerObj: state[props.headerNames],
-    data: state[props.dataName],
-    duplicatedData: state['new' + props.dataName]
+    modifiedState: state
+    /* duplicatedData: state['new' + props.dataName],
+    duplicatedData2: state['newcontacts'],  Need to understand why these won't work*/
   };
 };
 
