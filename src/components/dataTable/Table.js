@@ -14,8 +14,8 @@ class Table extends React.Component {
 
   componentWillMount(){
     this.props.duplicateData(this.props.dataName)
-    console.log('after state passed into component after completion of duplicateData action:')
-    console.log(this.props)
+    console.log('Redux state passed onto Table component after completion of duplicateData action:')
+    console.log(this.props.duplicatedData)
   }
 
   createDataRows(){
