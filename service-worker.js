@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/dynamicDataTable/precache-manifest.a52eb8b2d94d71544730e4b8812d34eb.js"
+  "/dynamicDataTable/precache-manifest.9700a826cbfdce7bc5990598b0c4d6c8.js"
 );
 
 workbox.clientsClaim();
