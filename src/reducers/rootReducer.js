@@ -86,26 +86,20 @@ const initState = {
 const rootReducer = (state = initState, action) => {
   switch(action.type){
     case 'SORT_BY_FIELD':
-      let newStateSort = state;
       let compare = (a,b) =>{
         let aa = a[action.headerKeyActive].toUpperCase();
         let bb = b[action.headerKeyActive].toUpperCase();
         return((aa>bb)?1:-1)      
       }
       console.log('sort by: ' + action.headerKeyActive)
-      newStateSort.newcontacts = newStateSort.newcontacts.sort((a,b) => compare(a,b))
-      state = newStateSort;
-      console.log(state.newcontacts)
+      Object.assign(state.newcontacts,state.newcontacts.sort((a,b) => compare(a,b)))
       return state;
 
     case 'DUPLICATE_DATA':
-      let newState = state;
-      newState.newcontacts = newState.contacts;
-      state = newState;
-      console.log('redux store DUPLICATE_DATA')
+      Object.assign(state.newcontacts, state.contacts);
       console.log(state.newcontacts)
-      return state;
-
+      return state
+      
     default:
       return state;
   }   
