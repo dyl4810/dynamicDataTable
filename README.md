@@ -1,4 +1,11 @@
-hi
+dynamicDataTable includes sort, filter, edit and delete functionality. The component will work with data that is passed onto it in the format shown below link:
+
+`<Table dataName = {'contacts'} headerNames = {'contactsKeyNames'}/>`
+
+https://github.com/dyl4810/dynamicDataTable/blob/master/src/reducers/rootReducer.js#L14-L83
+
+Sandbox: https://dyl4810.github.io/dynamicDataTable
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
